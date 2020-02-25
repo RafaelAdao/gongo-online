@@ -1,0 +1,84 @@
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+body {
+  background-attachment: fixed;
+  background-size: 100% auto;
+}
+
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.blended_grid {
+  display: block;
+  width: 1000px;
+  overflow: auto;
+  margin: 50px auto 0 auto;
+}
+
+.pageHeader {
+  float: left;
+  clear: none;
+  height: 200px;
+  width: 1000px;
+}
+
+.pageLeftMenu {
+  float: left;
+  clear: none;
+  height: 600px;
+  width: 160px;
+}
+
+.pageContent {
+  float: left;
+  clear: none;
+  height: 600px;
+  width: 680px;
+  cursor: url("https://user-images.githubusercontent.com/5923706/75278022-e89ebb00-57e7-11ea-9f2c-806473f98c15.png"), auto;
+}
+
+.pageRightMenu {
+  float: left;
+  clear: none;
+  height: 600px;
+  width: 160px;
+}
+
+.pageFooter {
+  float: left;
+  clear: none;
+  height: 100px;
+  width: 1000px;
+}
+
+.animacaoGongo {
+  animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+@keyframes shake {
+  10%, 90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+  
+  20%, 80% {
+    transform: translate3d(2px, 0, 0);
+  }
+
+  30%, 50%, 70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+
+  40%, 60% {
+    transform: translate3d(4px, 0, 0);
+  }
+}

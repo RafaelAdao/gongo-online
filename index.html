@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <title>Gong Online!!!</title>
+  <meta name="description" content="Gong online">
+</head>
+
+<body>
+  <audio id="audio" src="chinese-gong-daniel_simon.mp3" preload="auto"></audio>
+  <div class="blended_grid">
+    <div class="pageLeftMenu">
+    </div>
+    <div class="pageContent">
+      <img id="gongo" src="gongo.png" draggable="false">
+    </div>
+    <div class="pageRightMenu">
+    </div>
+    <div class="pageFooter">
+    </div>
+  </div>
+  <script>
+    // retrieve the element
+    element = document.getElementById("gongo");
+
+    // reset the transition by...
+    element.addEventListener("click", function (e) {
+      e.preventDefault;
+
+      // -> removing the class
+      element.classList.remove("animacaoGongo");
+
+      // -> triggering reflow /* The actual magic */
+      // without this it wouldn't work. Try uncommenting the line and the transition won't be retriggered.
+      // Oops! This won't work in strict mode. Thanks Felis Phasma!
+      // element.offsetWidth = element.offsetWidth;
+      // Do this instead:
+      void element.offsetWidth;
+
+      // -> and re-adding the class
+      element.classList.add("animacaoGongo");
+
+      document.getElementById("audio").load();
+      document.getElementById("audio").play();
+    }, false);    
+  </script>
+</body>
+
+</html>
