@@ -34,6 +34,8 @@
       </script>
     </div>
     <div class="pageFooter">
+      <br>
+      <p>Number of beats on the gong:<span id="beatsCount"></span></p>
     </div>
   </div>
 
@@ -60,7 +62,14 @@
 
       document.getElementById("audio").load();
       document.getElementById("audio").play();
-    }, false);    
+
+      saveBeat();
+    }, false);
+
+    function updateBeatsCount(beatsCount) {
+      var beatsCountElem = document.getElementById("beatsCount");
+      beatsCountElem.innerText = beatsCount;
+    }
   </script>
 
   <!-- The core Firebase JS SDK is always required and must be listed first -->
@@ -69,6 +78,7 @@
   <!-- TODO: Add SDKs for Firebase products that you want to use
      https://firebase.google.com/docs/web/setup#available-libraries -->
   <script src="https://www.gstatic.com/firebasejs/7.9.3/firebase-analytics.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.9.2/firebase-database.js"></script>
 
   <script>
     // Your web app's Firebase configuration
@@ -85,6 +95,21 @@
     // Initialize Firebase
     firebase.initializeApp(firebaseConfig);
     firebase.analytics();
+
+    // Get a reference to the database service
+    var database = firebase.database();
+
+    var beatsCountRef = database.ref('gongo/beatsCount');
+
+    beatsCountRef.on('value', function (snapshot) {
+      updateBeatsCount(snapshot.val());
+    });
+
+    function saveBeat() {
+      beatsCountRef.transaction(function (beatsCount) {
+        return beatsCount + 1;
+      });
+    }
   </script>
 </body>
 
