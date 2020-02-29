@@ -62,6 +62,30 @@
       document.getElementById("audio").play();
     }, false);    
   </script>
+
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/7.9.3/firebase-app.js"></script>
+
+  <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+  <script src="https://www.gstatic.com/firebasejs/7.9.3/firebase-analytics.js"></script>
+
+  <script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+      apiKey: "AIzaSyAP-qYhP32eI5uuKoOIIdU2QjujS0FlNLE",
+      authDomain: "gong-online.firebaseapp.com",
+      databaseURL: "https://gong-online.firebaseio.com",
+      projectId: "gong-online",
+      storageBucket: "gong-online.appspot.com",
+      messagingSenderId: "408851349742",
+      appId: "1:408851349742:web:9038f6325a2e5b732433ff",
+      measurementId: "G-YXTYENW5HW"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
+  </script>
 </body>
 
 </html>
