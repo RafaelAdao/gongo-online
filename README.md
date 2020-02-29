@@ -1,4 +1,4 @@
-# gongo-online
+# gong-online
 
 * html :heavy_check_mark:
 * css :heavy_check_mark:
