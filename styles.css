@@ -88,5 +88,5 @@ img {
 }
 
 #_hj_feedback_container > div > div {
-  bottom: 700px !important;
+  bottom: calc(100vh - 200px) !important;
 }
