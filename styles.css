@@ -86,3 +86,7 @@ img {
     transform: translate3d(4px, 0, 0);
   }
 }
+
+#_hj_feedback_container > div > div {
+  bottom: 500px
+}
